@@ -1,0 +1,60 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+/* Responsive Sidebar Toggler */
+.aside.open {
+    left: 0 !important;
+    transition: left 0.3s ease;
+}
+
+.main-content.shifted {
+    padding-left: 270px !important;
+}
+
+@media screen and (max-width: 1199px) {
+    .aside {
+        transition: left 0.3s ease;
+    }
+
+    .nav-toggler {
+        display: flex !important;
+        z-index: 100;
+    }
+}
+
+/* media query for small phones */
+@media screen and (max-width: 575px) {
+    .section {
+        padding: 0 15px;
+    }
+
+    h3.hello,
+    h3.my-profession,
+    .home-info p {
+        font-size: 18px !important;
+        text-align: center;
+    }
+
+    .home .home-info .btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .contact .contact-title,
+    .contact .contact-sub-title {
+        font-size: 18px;
+    }
+
+    .btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+
+    .portfolio .portfolio-item-inner h4,
+    .portfolio .portfolio-item-inner p,
+    .service .service-item .service-item-inner p {
+        font-size: 14px;
+    }
+}
