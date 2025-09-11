@@ -135,132 +135,96 @@ ul {
 }
 
 /* side navbar */
+/* ==============================
+   Sidebar / Aside - Fun/Bold
+============================== */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Luckiest+Guy&display=swap');
+
 .aside {
     width: 270px;
     background: var(--bg-black-100);
     position: fixed;
     left: 0;
     top: 0;
-    padding: 30px;
+    padding: 30px 20px;
     height: 100%;
     border-right: 1px solid var(--bg-black-50);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     z-index: 10;
+    font-family: 'Rubik', sans-serif; /* Fun, readable */
 }
 
+/* Logo */
 .aside .logo {
-    position: absolute;
+    position: relative;
     top: 50px;
-    font-size: 30px;
-    text-transform: capitalize;
+    text-transform: none;
+    text-align: center;
 }
 
 .aside .logo a {
+    font-family: 'Luckiest Guy', cursive; /* Bold, playful logo */
     color: var(--text-black-900);
     font-weight: 700;
-    padding: 15px 20px;
     font-size: 30px;
-    letter-spacing: 5px;
-    position: relative;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .aside .logo a span {
-    font-family: 'clicker Script', cursive;
-    font-size: 40px;
-}
-
-.aside .logo a::before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-bottom: 5px solid var(--skin-color);
-    border-left: 5px solid var(--skin-color);
-    bottom: 0;
-    left: 0;
-}
-
-.aside .logo a::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-top: 5px solid var(--skin-color);
-    border-right: 5px solid var(--skin-color);
-    top: 0;
-    right: 0;
-}
-
-.aside .nav-toggler {
-    height: 40px;
-    width: 45px;
-    border: 1px solid var(--bg-black-50);
-    cursor: pointer;
-    position: fixed;
-    left: 300px;
-    top: 20px;
-    border-radius: 5px;
-    background: var(--bg-black-100);
-    display: none;
-    align-items: center;
-    justify-content: center;
-}
-
-.aside.nav-toggler span {
-    height: 2px;
-    width: 18px;
-    background: var(--skin-color);
+    font-size: 36px;
+    color: var(--skin-color);
     display: inline-block;
-    position: relative;
+    vertical-align: middle;
 }
 
-.aside .nav-toggler span::before {
-    content: '';
-    height: 2px;
-    width: 18px;
-    background: var(--skin-color);
-    position: absolute;
-    top: -6px;
-    left: 0;
-}
-
-.aside .nav-toggler span::after {
-    content: '';
-    height: 2px;
-    width: 18px;
-    background: var(--skin-color);
-    position: absolute;
-    top: 6px;
-    left: 0;
-}
-
+/* Nav links */
 .aside .nav {
-    margin-top: 50px;
+    margin-top: 120px;
+    width: 100%;
 }
 
 .aside .nav li {
-    margin-bottom: 20px;
-    display: block;
+    margin-bottom: 15px;
 }
 
 .aside .nav li a {
+    font-family: 'Rubik', sans-serif;
     font-size: 16px;
-    font-weight: 600;
-    display: block;
-    border-bottom: 1px solid var(--bg-black-50);
+    font-weight: 500;
     color: var(--text-black-900);
-    padding: 5px 15px;
-}
-
-.aside .nav li a.active {
-    color: var(--skin-color);
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .aside .nav li a i {
-    margin-right: 15px;
+    margin-right: 12px;
+    font-size: 18px;
+    color: var(--skin-color);
 }
+
+.aside .nav li a:hover,
+.aside .nav li a.active {
+    color: var(--skin-color);
+    background: rgba(236, 24, 57, 0.1);
+    transform: translateX(5px);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 991px) {
+    .aside {
+        left: -270px; /* Hide sidebar for smaller screens */
+    }
+}
+
 
 /* home */
 .home {
@@ -337,200 +301,276 @@ h3.my-profession {
 }
 
 /* About  */
-.about .about-content {
-    flex: 0 0 100%;
-    max-width: 100%;
+/* ==============================
+   About Section
+============================== */
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
 }
 
-.about .about-content .about-text {
-    flex: 0 0 100%;
-    max-width: 100%;
+/* About Text */
+.about-text {
+    flex: 1 1 100%;
 }
 
-.about .about-content .about-text h3 {
+.about-text h3 {
     font-size: 24px;
-    margin-bottom: 15px;
     font-weight: 700;
+    margin-bottom: 15px;
     color: var(--text-black-900);
 }
 
-.about .about-content .about-text h3 span {
+.about-text h3 span {
     color: var(--skin-color);
 }
 
-.about .about-content .about-text p {
+.about-text p {
     font-size: 16px;
-    line-height: 25px;
+    line-height: 1.6;
     color: var(--text-black-700);
 }
 
-.about .about-content .personal-info {
-    flex: 0 0 60%;
-    max-width: 60%;
+/* Personal Info */
+.personal-info {
+    flex: 1 1 60%;
     margin-top: 40px;
 }
 
-.about .about-content .personal-info .info-item {
-    flex: 0 0 50%;
-    max-width: 50%;
+.personal-info .info-item {
+    flex: 1 1 50%;
+    margin-bottom: 15px;
 }
 
-.about .about-content .personal-info .info-item p {
+.personal-info .info-item p {
     font-weight: 600;
-    padding: 10px 0;
     font-size: 16px;
-    color: var(--text-black-900);
+    padding: 10px 0;
     border-bottom: 1px solid var(--bg-black-50);
+    color: var(--text-black-900);
 }
 
-.about .about-content .personal-info .info-item p span {
+.personal-info .info-item p span {
     font-weight: 400;
     color: var(--text-black-700);
     margin-left: 4px;
     display: inline-block;
 }
 
-.about .about-content .personal-info .buttons {
+.personal-info .buttons {
     margin-top: 30px;
 }
 
-.about .about-content .personal-info .buttons .btn {
+.personal-info .buttons .btn {
     margin-right: 15px;
     margin-top: 10px;
 }
 
-.about .about-content .skills {
-    flex: 0 0 40%;
-    max-width: 40%;
+/* Skills */
+/* ==============================
+   Skills Section
+============================== */
+.skills {
+    flex: 1 1 40%;
     margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.about .about-content .skills .skill-item {
-    flex: 0 0 100%;
-    max-width: 100%;
+/* Each skill block */
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.about .about-content .skills .skill-item h5 {
-    line-height: 40px;
-    font-weight: 600;
+/* Skill name and percentage container */
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-item h5 {
     font-size: 16px;
+    font-weight: 600;
     color: var(--text-black-900);
     text-transform: capitalize;
+    margin: 0;
 }
 
-.about .about-content .skills .skill-item .progress {
-    background-color: var(--bg-black-50);
-    height: 7px;
-    border-radius: 4px;
+/* Progress bar wrapper */
+.progress {
     width: 100%;
+    height: 10px;
+    border-radius: 8px;
+    background: var(--bg-black-50);
+    overflow: hidden;
     position: relative;
 }
 
-.about .about-content .skills .skill-item {
-    margin-bottom: 25px;
-}
-
-.about .about-content .skills .skill-item .progress .progress-in {
-    position: absolute;
-    left: 0;
-    top: 0;
+/* Inner progress fill */
+.progress-in {
     height: 100%;
-    border-radius: 4px;
-    background-color: var(--skin-color);
+    width: 0; /* animate dynamically via JS */
+    background: var(--skin-color);
+    border-radius: 8px;
+    transition: width 0.6s ease;
 }
 
-.about .about-content .skills .skill-item .skill-percent {
-    position: absolute;
-    right: 0;
+/* Optional percentage badge */
+.skill-percent {
+    font-size: 14px;
+    font-weight: 500;
     color: var(--text-black-900);
-    top: -40px;
-    font-weight: 400;
-    line-height: 40px;
 }
 
-.about .about-content .education,
-.about .about-content .experience {
-    flex: 0 0 50%;
-    max-width: 50%;
+/* Education & Experience */
+/* ==============================
+   Education & Experience
+============================== */
+.education,
+.experience {
+    flex: 1 1 50%;
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.about .about-content h3.title {
+/* Section titles */
+h3.title {
     font-size: 24px;
-    margin-bottom: 30px;
     font-weight: 700;
+    margin-bottom: 30px;
     color: var(--text-black-900);
 }
 
-.about .about-content .timeline-box {
-    flex: 0 0 100%;
-    max-width: 100%;
+/* Timeline container */
+.timeline-box {
+    flex: 1 1 100%;
 }
 
-.about .about-content .timeline {
-    background-color: var(--bg-black-100);
-    padding: 30px 15px;
-    border: 1px solid var(--bg-black-50);
-    border-radius: 10px;
+.timeline {
+    position: relative;
     width: 100%;
-    position: relative;
+    padding: 30px 20px;
+    background: var(--bg-black-100);
+    border-radius: 12px;
+    border: 1px solid var(--bg-black-50);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
-.about .about-content .timeline .timeline-item {
+/* Each timeline item */
+.timeline-item {
     position: relative;
-    padding-left: 37px;
-    padding-bottom: 50px;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.about .about-content .timeline .timeline-item:last-child {
+.timeline-item:last-child {
     padding-bottom: 0;
 }
 
-.about .about-content .timeline .timeline-item::before {
+/* Vertical line */
+.timeline-item::before {
     content: '';
-    width: 1px;
     position: absolute;
+    left: 20px;
+    top: 0;
+    width: 2px;
     height: 100%;
-    left: 7px;
-    top: 0;
-    background-color: var(--skin-color);
+    background: var(--skin-color);
+    border-radius: 1px;
 }
 
-.about .about-content .timeline .circle-dot {
+/* Timeline dot */
+.circle-dot {
     position: absolute;
-    left: 0;
+    left: 11px;
     top: 0;
-    height: 15px;
-    width: 15px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
-    background-color: var(--skin-color);
+    background: var(--skin-color);
+    border: 2px solid var(--bg-black-100);
 }
 
-.about .about-content .timeline .timeline-date {
-    font-weight: 400;
+/* Date */
+.timeline-date {
     font-size: 14px;
-    margin-bottom: 12px;
+    font-weight: 400;
     color: var(--text-black-700);
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.about .about-content .timeline .timeline-date .fa {
-    margin-right: 5px;
-}
-
-.about .about-content .timeline .timeline-title {
-    font-weight: 700;
+/* Title of event/degree/job */
+.timeline-title {
     font-size: 18px;
-    margin-bottom: 15px;
+    font-weight: 700;
     text-transform: capitalize;
     color: var(--text-black-900);
+    margin: 0;
 }
 
-.about .about-content .timeline .timeline-text {
-    line-height: 25px;
+/* Description text */
+.timeline-text {
     font-size: 16px;
-    text-align: justify;
+    line-height: 1.6;
     color: var(--text-black-700);
+    text-align: justify;
 }
+
+/* ==============================
+   Responsive
+============================== */
+@media (max-width: 991px) {
+    .education,
+    .experience {
+        flex: 1 1 100%;
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+    }
+
+    .timeline-item::before {
+        left: 15px;
+    }
+
+    .circle-dot {
+        left: 6px;
+    }
+}
+
+
+/* ==============================
+   Responsive
+============================== */
+@media (max-width: 991px) {
+    .personal-info,
+    .skills,
+    .education,
+    .experience {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .info-item {
+        flex: 1 1 100%;
+    }
+}
+
 
 /* service */
 .service .container {
