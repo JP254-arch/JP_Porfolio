@@ -154,7 +154,8 @@ ul {
     justify-content: flex-start;
     align-items: center;
     z-index: 10;
-    font-family: 'Rubik', sans-serif; /* Fun, readable */
+    font-family: 'Rubik', sans-serif;
+    /* Fun, readable */
 }
 
 /* Logo */
@@ -166,7 +167,8 @@ ul {
 }
 
 .aside .logo a {
-    font-family: 'Luckiest Guy', cursive; /* Bold, playful logo */
+    font-family: 'Luckiest Guy', cursive;
+    /* Bold, playful logo */
     color: var(--text-black-900);
     font-weight: 700;
     font-size: 30px;
@@ -221,7 +223,8 @@ ul {
 /* Responsive adjustments */
 @media screen and (max-width: 991px) {
     .aside {
-        left: -270px; /* Hide sidebar for smaller screens */
+        left: -270px;
+        /* Hide sidebar for smaller screens */
     }
 }
 
@@ -276,22 +279,22 @@ h3.my-profession {
     content: '';
     position: absolute;
     height: 80px;
-    width: 80px;
+    /* width: 80px;
     border-bottom: 10px solid var(--skin-color);
     border-right: 10px solid var(--skin-color);
     right: 20px;
-    bottom: -40px;
+    bottom: -40px; */
 }
 
 .home-img::before {
     content: '';
     position: absolute;
     height: 80px;
-    width: 80px;
+    /* width: 80px;
     border-top: 10px solid var(--skin-color);
     border-left: 10px solid var(--skin-color);
     left: -20px;
-    top: -40px;
+    top: -40px; */
 }
 
 .home .home-img img {
@@ -300,7 +303,6 @@ h3.my-profession {
     height: 400px;
 }
 
-/* About  */
 /* ==============================
    About Section
 ============================== */
@@ -415,7 +417,8 @@ h3.my-profession {
 /* Inner progress fill */
 .progress-in {
     height: 100%;
-    width: 0; /* animate dynamically via JS */
+    width: 0;
+    /* animate dynamically via JS */
     background: var(--skin-color);
     border-radius: 8px;
     transition: width 0.6s ease;
@@ -534,6 +537,7 @@ h3.title {
    Responsive
 ============================== */
 @media (max-width: 991px) {
+
     .education,
     .experience {
         flex: 1 1 100%;
@@ -557,6 +561,7 @@ h3.title {
    Responsive
 ============================== */
 @media (max-width: 991px) {
+
     .personal-info,
     .skills,
     .education,
@@ -665,6 +670,7 @@ h3.title {
     cursor: pointer;
     text-align: center;
 }
+
 .portfolio .portfolio-item-inner h4 {
     font-size: 18px;
     margin-bottom: 15px;
@@ -672,6 +678,7 @@ h3.title {
     font-weight: 700;
     text-transform: capitalize;
 }
+
 .portfolio .portfolio-item-inner p {
     font-size: 16px;
     color: var(--text-black-700);
@@ -682,6 +689,7 @@ h3.title {
     width: 100%;
     display: block;
 }
+
 .portfolio .portfolio-item-inner .icon .fa {
     font-size: 40px;
     line-height: 60px;

@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (navToggler && aside) {
         navToggler.addEventListener('click', function () {
             aside.classList.toggle('open');
-            mainContent?.classList.toggle('shifted'); // Only if it exists
+            mainContent?.classList.toggle('shifted');
             navToggler.classList.toggle('open');
         });
     }
