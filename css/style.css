@@ -135,99 +135,132 @@ ul {
 }
 
 /* side navbar */
-/* ==============================
-   Sidebar / Aside - Fun/Bold
-============================== */
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Luckiest+Guy&display=swap');
-
 .aside {
     width: 270px;
     background: var(--bg-black-100);
     position: fixed;
     left: 0;
     top: 0;
-    padding: 30px 20px;
+    padding: 30px;
     height: 100%;
     border-right: 1px solid var(--bg-black-50);
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     z-index: 10;
-    font-family: 'Rubik', sans-serif;
-    /* Fun, readable */
 }
 
-/* Logo */
 .aside .logo {
-    position: relative;
+    position: absolute;
     top: 50px;
-    text-transform: none;
-    text-align: center;
+    font-size: 30px;
+    text-transform: capitalize;
 }
 
 .aside .logo a {
-    font-family: 'Luckiest Guy', cursive;
-    /* Bold, playful logo */
     color: var(--text-black-900);
     font-weight: 700;
+    padding: 15px 20px;
     font-size: 30px;
-    letter-spacing: 1px;
-    padding: 10px 15px;
-    display: inline-block;
-    transition: color 0.3s ease, transform 0.3s ease;
+    letter-spacing: 5px;
+    position: relative;
 }
 
 .aside .logo a span {
-    font-size: 36px;
-    color: var(--skin-color);
-    display: inline-block;
-    vertical-align: middle;
+    font-family: 'clicker Script', cursive;
+    font-size: 40px;
 }
 
-/* Nav links */
+.aside .logo a::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-bottom: 5px solid var(--skin-color);
+    border-left: 5px solid var(--skin-color);
+    bottom: 0;
+    left: 0;
+}
+
+.aside .logo a::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-top: 5px solid var(--skin-color);
+    border-right: 5px solid var(--skin-color);
+    top: 0;
+    right: 0;
+}
+
+.aside .nav-toggler {
+    height: 40px;
+    width: 45px;
+    border: 1px solid var(--bg-black-50);
+    cursor: pointer;
+    position: fixed;
+    left: 300px;
+    top: 20px;
+    border-radius: 5px;
+    background: var(--bg-black-100);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.aside.nav-toggler span {
+    height: 2px;
+    width: 18px;
+    background: var(--skin-color);
+    display: inline-block;
+    position: relative;
+}
+
+.aside .nav-toggler span::before {
+    content: '';
+    height: 2px;
+    width: 18px;
+    background: var(--skin-color);
+    position: absolute;
+    top: -6px;
+    left: 0;
+}
+
+.aside .nav-toggler span::after {
+    content: '';
+    height: 2px;
+    width: 18px;
+    background: var(--skin-color);
+    position: absolute;
+    top: 6px;
+    left: 0;
+}
+
 .aside .nav {
-    margin-top: 120px;
-    width: 100%;
+    margin-top: 50px;
 }
 
 .aside .nav li {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    display: block;
 }
 
 .aside .nav li a {
-    font-family: 'Rubik', sans-serif;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
+    display: block;
+    border-bottom: 1px solid var(--bg-black-50);
     color: var(--text-black-900);
-    padding: 10px 15px;
-    display: flex;
-    align-items: center;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    padding: 5px 15px;
+}
+
+.aside .nav li a.active {
+    color: var(--skin-color);
 }
 
 .aside .nav li a i {
-    margin-right: 12px;
-    font-size: 18px;
-    color: var(--skin-color);
+    margin-right: 15px;
 }
-
-.aside .nav li a:hover,
-.aside .nav li a.active {
-    color: var(--skin-color);
-    background: rgba(236, 24, 57, 0.1);
-    transform: translateX(5px);
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 991px) {
-    .aside {
-        left: -270px;
-        /* Hide sidebar for smaller screens */
-    }
-}
-
 
 /* home */
 .home {
@@ -279,22 +312,22 @@ h3.my-profession {
     content: '';
     position: absolute;
     height: 80px;
-    /* width: 80px;
+    width: 80px;
     border-bottom: 10px solid var(--skin-color);
     border-right: 10px solid var(--skin-color);
     right: 20px;
-    bottom: -40px; */
+    bottom: -40px;
 }
 
 .home-img::before {
     content: '';
     position: absolute;
     height: 80px;
-    /* width: 80px;
+    width: 80px;
     border-top: 10px solid var(--skin-color);
     border-left: 10px solid var(--skin-color);
     left: -20px;
-    top: -40px; */
+    top: -40px;
 }
 
 .home .home-img img {
@@ -303,279 +336,201 @@ h3.my-profession {
     height: 400px;
 }
 
-/* ==============================
-   About Section
-============================== */
-.about-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    width: 100%;
+/* About  */
+.about .about-content {
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 
-/* About Text */
-.about-text {
-    flex: 1 1 100%;
+.about .about-content .about-text {
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 
-.about-text h3 {
+.about .about-content .about-text h3 {
     font-size: 24px;
-    font-weight: 700;
     margin-bottom: 15px;
+    font-weight: 700;
     color: var(--text-black-900);
 }
 
-.about-text h3 span {
+.about .about-content .about-text h3 span {
     color: var(--skin-color);
 }
 
-.about-text p {
+.about .about-content .about-text p {
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 25px;
     color: var(--text-black-700);
 }
 
-/* Personal Info */
-.personal-info {
-    flex: 1 1 60%;
+.about .about-content .personal-info {
+    flex: 0 0 60%;
+    max-width: 60%;
     margin-top: 40px;
 }
 
-.personal-info .info-item {
-    flex: 1 1 50%;
-    margin-bottom: 15px;
+.about .about-content .personal-info .info-item {
+    flex: 0 0 50%;
+    max-width: 50%;
 }
 
-.personal-info .info-item p {
+.about .about-content .personal-info .info-item p {
     font-weight: 600;
-    font-size: 16px;
     padding: 10px 0;
-    border-bottom: 1px solid var(--bg-black-50);
+    font-size: 16px;
     color: var(--text-black-900);
+    border-bottom: 1px solid var(--bg-black-50);
 }
 
-.personal-info .info-item p span {
+.about .about-content .personal-info .info-item p span {
     font-weight: 400;
     color: var(--text-black-700);
     margin-left: 4px;
     display: inline-block;
 }
 
-.personal-info .buttons {
+.about .about-content .personal-info .buttons {
     margin-top: 30px;
 }
 
-.personal-info .buttons .btn {
+.about .about-content .personal-info .buttons .btn {
     margin-right: 15px;
     margin-top: 10px;
 }
 
-/* Skills */
-/* ==============================
-   Skills Section
-============================== */
-.skills {
-    flex: 1 1 40%;
+.about .about-content .skills {
+    flex: 0 0 40%;
+    max-width: 40%;
     margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }
 
-/* Each skill block */
-.skill-item {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+.about .about-content .skills .skill-item {
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 
-/* Skill name and percentage container */
-.skill-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.skill-item h5 {
-    font-size: 16px;
+.about .about-content .skills .skill-item h5 {
+    line-height: 40px;
     font-weight: 600;
+    font-size: 16px;
     color: var(--text-black-900);
     text-transform: capitalize;
-    margin: 0;
 }
 
-/* Progress bar wrapper */
-.progress {
+.about .about-content .skills .skill-item .progress {
+    background-color: var(--bg-black-50);
+    height: 7px;
+    border-radius: 4px;
     width: 100%;
-    height: 10px;
-    border-radius: 8px;
-    background: var(--bg-black-50);
-    overflow: hidden;
     position: relative;
 }
 
-/* Inner progress fill */
-.progress-in {
+.about .about-content .skills .skill-item {
+    margin-bottom: 25px;
+}
+
+.about .about-content .skills .skill-item .progress .progress-in {
+    position: absolute;
+    left: 0;
+    top: 0;
     height: 100%;
-    width: 0;
-    /* animate dynamically via JS */
-    background: var(--skin-color);
-    border-radius: 8px;
-    transition: width 0.6s ease;
+    border-radius: 4px;
+    background-color: var(--skin-color);
 }
 
-/* Optional percentage badge */
-.skill-percent {
-    font-size: 14px;
-    font-weight: 500;
+.about .about-content .skills .skill-item .skill-percent {
+    position: absolute;
+    right: 0;
     color: var(--text-black-900);
+    top: -40px;
+    font-weight: 400;
+    line-height: 40px;
 }
 
-/* Education & Experience */
-/* ==============================
-   Education & Experience
-============================== */
-.education,
-.experience {
-    flex: 1 1 50%;
+.about .about-content .education,
+.about .about-content .experience {
+    flex: 0 0 50%;
+    max-width: 50%;
     margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }
 
-/* Section titles */
-h3.title {
+.about .about-content h3.title {
     font-size: 24px;
-    font-weight: 700;
     margin-bottom: 30px;
+    font-weight: 700;
     color: var(--text-black-900);
 }
 
-/* Timeline container */
-.timeline-box {
-    flex: 1 1 100%;
+.about .about-content .timeline-box {
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 
-.timeline {
-    position: relative;
-    width: 100%;
-    padding: 30px 20px;
-    background: var(--bg-black-100);
-    border-radius: 12px;
+.about .about-content .timeline {
+    background-color: var(--bg-black-100);
+    padding: 30px 15px;
     border: 1px solid var(--bg-black-50);
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-/* Each timeline item */
-.timeline-item {
+    border-radius: 10px;
+    width: 100%;
     position: relative;
-    padding-left: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
 }
 
-.timeline-item:last-child {
+.about .about-content .timeline .timeline-item {
+    position: relative;
+    padding-left: 37px;
+    padding-bottom: 50px;
+}
+
+.about .about-content .timeline .timeline-item:last-child {
     padding-bottom: 0;
 }
 
-/* Vertical line */
-.timeline-item::before {
+.about .about-content .timeline .timeline-item::before {
     content: '';
+    width: 1px;
     position: absolute;
-    left: 20px;
-    top: 0;
-    width: 2px;
     height: 100%;
-    background: var(--skin-color);
-    border-radius: 1px;
-}
-
-/* Timeline dot */
-.circle-dot {
-    position: absolute;
-    left: 11px;
+    left: 7px;
     top: 0;
-    width: 18px;
-    height: 18px;
+    background-color: var(--skin-color);
+}
+
+.about .about-content .timeline .circle-dot {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 15px;
+    width: 15px;
     border-radius: 50%;
-    background: var(--skin-color);
-    border: 2px solid var(--bg-black-100);
+    background-color: var(--skin-color);
 }
 
-/* Date */
-.timeline-date {
-    font-size: 14px;
+.about .about-content .timeline .timeline-date {
     font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 12px;
     color: var(--text-black-700);
-    display: flex;
-    align-items: center;
-    gap: 5px;
 }
 
-/* Title of event/degree/job */
-.timeline-title {
-    font-size: 18px;
+.about .about-content .timeline .timeline-date .fa {
+    margin-right: 5px;
+}
+
+.about .about-content .timeline .timeline-title {
     font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 15px;
     text-transform: capitalize;
     color: var(--text-black-900);
-    margin: 0;
 }
 
-/* Description text */
-.timeline-text {
+.about .about-content .timeline .timeline-text {
+    line-height: 25px;
     font-size: 16px;
-    line-height: 1.6;
-    color: var(--text-black-700);
     text-align: justify;
+    color: var(--text-black-700);
 }
-
-/* ==============================
-   Responsive
-============================== */
-@media (max-width: 991px) {
-
-    .education,
-    .experience {
-        flex: 1 1 100%;
-    }
-
-    .timeline-item {
-        padding-left: 40px;
-    }
-
-    .timeline-item::before {
-        left: 15px;
-    }
-
-    .circle-dot {
-        left: 6px;
-    }
-}
-
-
-/* ==============================
-   Responsive
-============================== */
-@media (max-width: 991px) {
-
-    .personal-info,
-    .skills,
-    .education,
-    .experience {
-        flex: 1 1 100%;
-    }
-}
-
-@media (max-width: 767px) {
-    .info-item {
-        flex: 1 1 100%;
-    }
-}
-
 
 /* service */
 .service .container {
@@ -670,7 +625,6 @@ h3.title {
     cursor: pointer;
     text-align: center;
 }
-
 .portfolio .portfolio-item-inner h4 {
     font-size: 18px;
     margin-bottom: 15px;
@@ -678,7 +632,6 @@ h3.title {
     font-weight: 700;
     text-transform: capitalize;
 }
-
 .portfolio .portfolio-item-inner p {
     font-size: 16px;
     color: var(--text-black-700);
@@ -689,7 +642,6 @@ h3.title {
     width: 100%;
     display: block;
 }
-
 .portfolio .portfolio-item-inner .icon .fa {
     font-size: 40px;
     line-height: 60px;
